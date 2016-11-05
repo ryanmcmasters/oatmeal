@@ -1,5 +1,6 @@
 //[oatmeal].
-//R.McMASTERS
+
+//r.mcmasters
 
 
 // To play this piece, click Language -> Evaluate File, read the instructions on the first page, then click "play."
@@ -30,9 +31,7 @@ s.waitForBoot{
 
 	~textbox = StaticText(w, Rect(50, 250, 500, 310))
 	.align_(\center)
-	.string_("Type the words that appear here in time with the blinking corners.
-
-The color of the text will begin to fade to signal a change of words.")
+	.string_("Type the words that appear in time with the blinking corners.")
 	.stringColor_(Color.white)
 	.background_(Color.black)
 	.font_(Font(size:24));
@@ -46,11 +45,9 @@ The color of the text will begin to fade to signal a change of words.")
 
 	~button1 = Button(w, Rect(125, 50, 350, 100))
 	.states_([
-		["play.", Color.grey, Color.black],
+		["play", Color.grey, Color.black],
 		["stop", Color.grey, Color.black],
-		["stop.", Color.grey, Color.black],
 		["close"]
-
 	])
 	.font_(Font(size:72))
 	.action_({
@@ -111,7 +108,7 @@ The color of the text will begin to fade to signal a change of words.")
 					].do{
 						arg word;
 						~textbox.string_(word).stringColor_(Color.white);
-						20.0.wait;
+						15.0.wait;
 
 						[1.0, 0.75, 0.25, 0.0].do{
 							arg counter1;
@@ -129,4 +126,4 @@ The color of the text will begin to fade to signal a change of words.")
 			{Window.closeAll});
 
 	});
-}//end of wait for boot.
+}
